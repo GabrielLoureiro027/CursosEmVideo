@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document Object Model (DOM)</title>
+    <style>
+
+        body{
+            background-color: rgba(89, 20, 215, 0.965);
+            color: white;
+            font: normal 22px arial;
+            text-align: center;
+        }
+        .arvoreDom{
+            padding-top: 100px;
+        }
+
+    </style>
+</head>
+<body>
+
+    <h1>Iniciando Estudo no DOM</h1>
+    <p>Aprendendo a usa o <strong>DOM</strong> em JavaScript</p>
+    <p>Aqui vai o resultado</p>
+    <div>Clique em Mim</div>
+    <script>
+        var p = window.document.getElementsByTagName('p')[1]
+        window.document.write('Está escrito assim: ' + p.innerText) 
+        p.style.color = 'blue'
+    </script>
+    
+    <section class="arvoreDom">
+        <section>Àrvore DOM</section>
+        <section><img src="img/Untitled (1).png" alt=""></section>
+    </section>
+
+</body>
+</html>
