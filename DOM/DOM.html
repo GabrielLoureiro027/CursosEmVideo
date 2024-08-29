@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div{
+            text-align: center;
+            line-height: 800px;
+        }
+        button{
+            display: inline-block;
+            text-align: center;
+            height: 120px;
+            width: 120px;
+
+        }
+    </style>
+</head>
+<body>
+    <div id="area">
+        <button id="mudarCor">Clica</button>
+    </div>
+    <script>
+    var a = window.document.getElementById('mudarCor')
+    var cor = window.document.querySelector('body')
+        a.addEventListener('click',clicar)
+        a.addEventListener('mouseenter', enter)
+        a.addEventListener('mouseout',exit)
+        function clicar(){
+            cor.style.background = 'blue'
+        }
+        function enter(){
+            a.innerText = 'Clica para mudar de cor'
+        }
+        function exit(){
+            a.innerText = 'Você saiu'
+        }
+
+    </script>
+</body>
+</style>
+</html>
