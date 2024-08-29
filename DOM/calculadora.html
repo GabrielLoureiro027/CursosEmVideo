@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora</title>
+    <style>
+        body{
+            background-color: green;
+        }
+        div{
+            display: flex;
+        }
+        input{
+            height: 70px;
+            width: 70px;
+        }
+        #lateral{
+            margin-left: 5px;
+            margin-bottom: 1px;
+        }
+        #cima{
+            margin-bottom: 5px;
+            
+        }
+        .vazio{
+            margin-top: 60px;
+        }
+        #res{
+            background-color: white;
+            padding: 5px 5px;
+            font: normal 12pt arial;
+        }
+    </style>
+</head>
+<body>
+<div>
+    <section>
+        <section><h1 id="res">Resultado</h1></section>
+        <section id="cima">
+            <input type="button" value="AC">
+            <input type="button" value="Apagar">
+            <input type="button" value="%" id="porcentagem">
+        </section>
+        <section>
+            <input type="button" value="1" id="um">
+            <input type="button" value="2" id="dois">
+            <input type="button" value="3" id="tres">
+        </section>
+        <section>
+            <input type="button" value="4" id="quatro">
+            <input type="button" value="5" id="cinco">
+            <input type="button" value="6" id="seis">
+        </section>
+        <section>
+            <input type="button" value="7" id="sete">
+            <input type="button" value="8" id="oito">
+            <input type="button" value="9" id="nove">
+        </section>
+        <section>
+            <input type="button" value="FD" id="FD">
+            <input type="button" value="0" id="zero">
+            <input type="button" value="." id="ponto">
+        </section>
+        
+    </section>
+    
+    <section>
+        <section class="vazio"></section>
+        <section id="lateral">
+            <input type="button" value="/" id="dividir">
+        </section>
+        <section id="lateral">
+            <input type="button" value="x" id="multiplicacao">
+        </section>
+        <section id="lateral">
+            <input type="button" value="-" id="subtracao">
+        </section>
+        <section id="lateral">
+            <input type="button" value="+" id="adicao">
+        </section>
+        <section id="lateral">
+            <input type="button" value="=" ondblclick="Calculadora()">
+        </section>
+    </section>
+
+</div>
+<script>
+    //Vairavel requerindo numeros
+    var um = window.document.getElementById('um')
+    var dois = window.document.getElementById('dois')
+    var tres = window.document.getElementById('tres')
+    var quatro = window.document.getElementById('quatro')
+    var cinco = window.document.getElementById('cinco')
+    var seis = window.document.getElementById('seis')
+    var sete = window.document.getElementById('sete')
+    var oito = window.document.getElementById('oito')
+    var nove = window.document.getElementById('nove')
+    var fd;
+    var zero = window.document.getElementById('zero')
+    //Varial requerindo operadores
+    var dividir = window.document.getElementById('dividir')
+    var porcentagem = window.document.getElementById('porcentagem')
+    var multiplicacao = window.document.getElementById('multiplicacao')
+    var adicao = window.document.getElementById('adicao')
+    var subtracao = window.document.getElementById('subtracao')
+
+    //Funções
+    function Calculadora(){
+        var n1 = Number(um.value)
+        var n2 = Number(dois.value)
+        var n3 = Number(tres.value)
+        var n4 = Number(quatro.value)
+        var n5 = Number(cinco.value)
+        var n6 = Number(seis.value)
+        var n7 = Number(sete.value)
+        var n8 = Number(oito.value)
+        var n9 = Number(nove.value)
+        var n0 = Number(zero.value)
+
+        var dividir = Number(dividir.value)
+        var porcento = Number(porcentagem.value)
+        var divisao = Number(dividir.value)
+        var multiplicacao = Number(multiplicacao.value)
+        var adicao = Number(adicao.value)
+        var subtracao = Number(subtracao.value)
+        //Fazendo o resultado
+        var res = window.document.getElementById('res')
+        res.innerHTML = `Soma do ${n1} com ${n2} é ${n1+n2}`
+    }
+
+</script>
+</body>
+</html>

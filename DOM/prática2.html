@@ -3,87 +3,66 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Calculadora</title>
-    <style>
-        div{
-            display: flex;
-        }
-        input{
-            height: 70px;
-            width: 70px;
-        }
-        #lateral{
-            margin-left: 5px;
-            margin-bottom: 1px;
-        }
-        #cima{
-            margin-bottom: 5px;
-            
-        }
-    </style>
+    <title>Document</title>
 </head>
+<style>
+    body{
+        font: normal 10pt arial;
+    }
+    main{
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    form{
+        text-align: center;
+        width: 200px;
+    }
+    .resultado{
+        margin: 0px;
+        margin-top: 5px;
+        line-height: 0px;
+        text-align: center;
+        height: 30px;
+        width: 800px;
+        background-color: black;
+        color: white;
+        border-radius: 20px;
+    }
+    input{
+        margin-top: 5px;
+        padding: 5px;
+    }
+</style>
 <body>
-<div>
-    <section>
-        <section id="cima">
-            <input type="button" value="AC">
-            <input type="button" value="Apagar">
-            <input type="button" value="%">
-        </section>
-        <section>
-            <input type="button" value="1">
-            <input type="button" value="2">
-            <input type="button" value="3">
-        </section>
-        <section>
-            <input type="button" value="4">
-            <input type="button" value="5">
-            <input type="button" value="6">
-        </section>
-        <section>
-            <input type="button" value="7">
-            <input type="button" value="8">
-            <input type="button" value="9">
-        </section>
-        <section>
-            <input type="button" value="FD">
-            <input type="button" value="0">
-            <input type="button" value=".">
-        </section>
-        
-    </section>
-    
-    <section>
-        <section id="lateral">
-            <input type="button" value="/">
-        </section>
-        <section id="lateral">
-            <input type="button" value="x">
-        </section>
-        <section id="lateral">
-            <input type="button" value="-">
-        </section>
-        <section id="lateral">
-            <input type="button" value="+">
-        </section>
-        <section id="lateral">
-            <input type="button" value="=">
-        </section>
-    </section>
 
-</div>
-<script>
-    var um = window.document.getElementById('1')
-    var dois = window.documentgetElementById('2')
-    var tres = window.documentgetElementById('3')
-    var quatro = window.documentgetElementById('4')
-    var cinco = window.documentgetElementById('5')
-    var seis = window.documentgetElementById('6')
-    var sete = window.documentgetElementById('7')
-    var oito = window.documentgetElementById('8')
-    var nove = window.documentgetElementById('9')
-    var fd;
-    var zero = window.documentgetElementById('0')
-</script>
+    <main>
+        <h1>Fale seu computador</h1>
+        <form action="">
+            <input type="text" id="cpu" placeholder="Digite sua CPU">
+            <input type="text" id="gpu" placeholder="Digite sua GPU">
+            <input type="text" id="ram" placeholder="Digite sua Memória Ram">
+            <input type="button" value="Enviar" id="enviar" onclick="mostrar()">
+        </form>
+        <div class="resultado">
+            <h3 id="resultado">Resultado</h3>
+        </div>
+
+    </main>
+
+    <script>
+
+        function mostrar(){
+            let Cpu = window.document.getElementById('cpu')
+            let Gpu = window.document.getElementById('gpu')
+            let Ram = window.document.getElementById('ram')
+            
+            let oQueFoiEscrito = window.document.getElementById('resultado')
+            oQueFoiEscrito.innerHTML = `Sua cpu: ${Cpu.value} Sua gpu: ${Gpu.value} Sua Memória Ram: ${Ram.value}`
+        }
+
+    </script>
 </body>
 </html>
