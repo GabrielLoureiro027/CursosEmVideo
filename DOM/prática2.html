@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -51,6 +51,7 @@
         
     }
     .resultadolista{
+        padding: 20px;
         margin: 0px;
         margin-top: 5px;
         line-height: 0;
@@ -64,6 +65,21 @@
     #resultadolista{
         padding: 5px;
         margin: 8px 10px;
+    }
+    ul{
+        margin: auto;
+        padding: 5px;
+        margin: 8px 10px;
+    }
+    li{
+        margin: auto;
+        padding: 10px;
+        list-style: none;
+    }
+    p{
+        margin: auto;
+        padding: 5px;
+        margin: 8px 10px;  
     }
 </style>
 <body>
@@ -84,12 +100,17 @@
                         <input type="button" value="Mostrar Lista" id="mostrarlista" onclick="mostrarLista()">
         </div>
         <div class="resultadolista">
-            <h3 id="resultadolista">Lista</h3>
+            <p id="resultadolista">Lista</p>
+            <ul></ul>
         </div>
-
     </main>
 
     <script>
+
+        let passarNome;
+        let passarCpu;
+        let passarGpu;
+        let passarRam;
 
         function mostrar(){
             let Proprietário = window.document.getElementById('proprietario')
@@ -103,12 +124,31 @@
             <p>Sua GPU: ${Gpu.value}</p>
             <p>Sua Memória Ram: ${Ram.value}</p>`
             oQueFoiEscrito.style.background = 'black'
+            passarNome = Proprietário.value;
+            passarCpu = Cpu.value;
+            passarGpu = Gpu.value;
+            passarRam = Ram.value;
+
         }
 
         //Problema para a função lista(); funcionar
         function mostrarLista(){
             let lista = window.document.getElementById('resultadolista')
-            lista.innerHTML = ``
+
+            let nomeProprietario = [
+                Nome = passarNome,
+                Cpu = passarCpu,
+                Gpu = passarGpu,
+                Ram = passarRam,
+            ]
+            const listaHTML = document.getElementsByTagName('ul')
+            const novoElemento = document.createElement('li')
+            novoElemento.innerHTML = 
+            `<p>Nome cliente: ${nomeProprietario[0]}</p>
+            <p>Cpu: ${nomeProprietario[1]}</p>
+            <p>Gpu: ${nomeProprietario[2]}</p>
+            <p>Ram: ${nomeProprietario[3]}</p>`
+            listaHTML[0].appendChild(novoElemento);
 
         }
 
