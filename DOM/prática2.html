@@ -10,6 +10,7 @@
         font: normal 10pt arial;
     }
     main{
+        height: auto;
         text-align: center;
         display: flex;
         flex-direction: column;
@@ -25,22 +26,52 @@
         margin-top: 5px;
         line-height: 0px;
         text-align: center;
-        height: 30px;
-        width: 800px;
+        height: auto;
+        width: auto;
         background-color: black;
         color: white;
         border-radius: 20px;
+    }
+    #resultado{
+        padding: 5px;
+        margin: 8px 10px;
     }
     input{
         margin-top: 5px;
         padding: 5px;
     }
+    input:focus {
+        outline: none; /* Garante que o contorno não apareça quando o input estiver focado */
+        box-shadow: none; /* Remove qualquer sombra ao redor do input quando focado */
+    }
+    #enviar:hover{
+        cursor: pointer;
+    }
+    #mostrarLista{
+        
+    }
+    .resultadolista{
+        margin: 0px;
+        margin-top: 5px;
+        line-height: 0;
+        text-align: center;
+        height: auto;
+        width: auto;
+        background-color: black;
+        color: white;
+        border-radius: 20px;
+    }
+    #resultadolista{
+        padding: 5px;
+        margin: 8px 10px;
+    }
 </style>
 <body>
 
     <main>
-        <h1>Fale seu computador</h1>
+        <h1>Fale os componentes do seu computador</h1>
         <form action="">
+            <input type="text" id="proprietario" placeholder="Digite o nome do Proprietário">
             <input type="text" id="cpu" placeholder="Digite sua CPU">
             <input type="text" id="gpu" placeholder="Digite sua GPU">
             <input type="text" id="ram" placeholder="Digite sua Memória Ram">
@@ -49,18 +80,36 @@
         <div class="resultado">
             <h3 id="resultado">Resultado</h3>
         </div>
+        <div>
+                        <input type="button" value="Mostrar Lista" id="mostrarlista" onclick="mostrarLista()">
+        </div>
+        <div class="resultadolista">
+            <h3 id="resultadolista">Lista</h3>
+        </div>
 
     </main>
 
     <script>
 
         function mostrar(){
+            let Proprietário = window.document.getElementById('proprietario')
             let Cpu = window.document.getElementById('cpu')
             let Gpu = window.document.getElementById('gpu')
             let Ram = window.document.getElementById('ram')
-            
             let oQueFoiEscrito = window.document.getElementById('resultado')
-            oQueFoiEscrito.innerHTML = `Sua cpu: ${Cpu.value} Sua gpu: ${Gpu.value} Sua Memória Ram: ${Ram.value}`
+            oQueFoiEscrito.innerHTML = 
+            `<p>Proprietário: ${Proprietário.value}</p>
+            <p>Sua CPU: ${Cpu.value}</p>
+            <p>Sua GPU: ${Gpu.value}</p>
+            <p>Sua Memória Ram: ${Ram.value}</p>`
+            oQueFoiEscrito.style.background = 'black'
+        }
+
+        //Problema para a função lista(); funcionar
+        function mostrarLista(){
+            let lista = window.document.getElementById('resultadolista')
+            lista.innerHTML = ``
+
         }
 
     </script>
