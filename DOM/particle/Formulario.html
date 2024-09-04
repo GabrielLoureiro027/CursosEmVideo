@@ -22,13 +22,25 @@
 
     main{
         background-color: black;
-        height: auto;
+        height: 100vh;
         width: auto;
         text-align: auto;
         display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: center;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    #test{
+        position: absolute;
+        top: 30%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
     }
     #tittle{
         color: white;
@@ -47,7 +59,7 @@
         background-color: white;
         color: black;
         padding: 5px;
-        margin: 8px 10px;
+        margin: 5px 10px;
         
     }
     input{
@@ -62,8 +74,8 @@
         cursor: pointer;
     }
     #mostrarlista{
-        position: fixed;
-        top: 90%;
+        cursor: pointer;
+        margin: 0px;
         left: 0;
         border-radius: 10px;
     }
@@ -101,30 +113,28 @@
 </style>
 <body>
 
-    <div>
-
-        <main id="particles-js">
-            <h1 id="tittle">Lista de PC</h1>
-            <h1 id="subTittle">Fale os componentes do seu computador</h1>
-            <form action="">
-                <input type="text" id="proprietario" placeholder="Digite o nome do Proprietário">
-                <input type="text" id="cpu" placeholder="Digite sua CPU">
-                <input type="text" id="gpu" placeholder="Digite sua GPU">
-                <input type="text" id="ram" placeholder="Digite sua Memória Ram">
-                <input type="button" value="Enviar" id="enviar" onclick="mostrar()">
-                
-            </form>
-            <strong id="resultado">Resultado</strong>
-            <div>
-                <input type="button" value="Mostrar Lista" id="mostrarlista" onclick="mostrarLista()">
+    <main id="particles-js">
+            <div id="test">
+                <h1 id="tittle">Lista de PC</h1>
+                <h1 id="subTittle">Fale os componentes do seu computador</h1>
+                <form action="">
+                    <input type="text" id="proprietario" placeholder="Digite o nome do Proprietário">
+                    <input type="text" id="cpu" placeholder="Digite sua CPU">
+                    <input type="text" id="gpu" placeholder="Digite sua GPU">
+                    <input type="text" id="ram" placeholder="Digite sua Memória Ram">
+                    <input type="button" value="Enviar" id="enviar" onclick="mostrar()">
+                </form>
+                <strong id="resultado">Resultado</strong>
+                <div>
+                    <input type="button" value="Mostrar Lista" id="mostrarlista" onclick="mostrarLista()">
+                </div>
+                <div class="resultadolista">
+                    <p id="resultadolista">Lista</p>
+                    <ul></ul>
+                </div>
             </div>
-            <div class="resultadolista">
-                <p id="resultadolista">Lista</p>
-                <ul></ul>
-            </div>
-        </main>
-
-    </div>
+           
+    </main>
 
     <script>
 
@@ -162,7 +172,7 @@
                 Gpu = passarGpu,
                 Ram = passarRam,
             ]
-            //Criando documento com um elemento e conectando com um elemento exsitente
+            //Criando documento com um elemento e conectando com um elemento existente
             const listaHTML = document.getElementsByTagName('ul')
             const novoElemento = document.createElement('li')
             novoElemento.innerHTML = 
